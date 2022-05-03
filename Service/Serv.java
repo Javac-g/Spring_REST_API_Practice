@@ -11,6 +11,9 @@ public class Serv {
         return "Your app working well";
 
     }
+    public String second(int a, String body){
+        return body + a ;
+    }
 
 
 
