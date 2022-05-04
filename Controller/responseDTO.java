@@ -1,10 +1,10 @@
-package com.MaksDenysov.Service;
+package com.MaksDenysov.Controller;
 
-public class requestDTO {
+public class responseDTO {
 
-    String name;
-    String position;
-    Integer age;
+    private String name;
+    private String position;
+    private Integer age;
 
     public String getName() {
         return name;

@@ -12,7 +12,7 @@ public class Serv {
 
     }
     public String second(int a, String body){
-        return body + a ;
+        return body + ": " + a ;
     }
 
     public String third(String name){
