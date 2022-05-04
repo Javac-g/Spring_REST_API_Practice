@@ -1,10 +1,10 @@
 package com.MaksDenysov.Controller;
 
-public class responseDTO {
+public class ResponseDTO {
 
     private String name;
     private String position;
-    private Integer age;
+    private Integer id;
 
     public String getName() {
         return name;
@@ -22,11 +22,11 @@ public class responseDTO {
         this.position = position;
     }
 
-    public Integer getAge() {
-        return age;
+    public Integer getId() {
+        return id;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

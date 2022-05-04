@@ -2,7 +2,7 @@ package com.MaksDenysov.Controller;
 
 
 import com.MaksDenysov.Service.Serv;
-import com.MaksDenysov.Service.requestDTO;
+import com.MaksDenysov.Service.RequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -17,9 +17,11 @@ public class Contr {
     private Serv serv;
 
 
-    @PostMapping(value = "data", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/data", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public String processData(@RequestBody requestDTO userDTO){
+    public ResponseDTO processData(@RequestBody RequestDTO userDTO){
+
+       return serv.forth(userDTO);
 
     }
 

@@ -1,10 +1,10 @@
 package com.MaksDenysov.Service;
 
-public class requestDTO {
+public class RequestDTO {
 
     String name;
     String position;
-    Integer age;
+    Integer id;
 
     public String getName() {
         return name;
@@ -22,11 +22,11 @@ public class requestDTO {
         this.position = position;
     }
 
-    public Integer getAge() {
-        return age;
+    public Integer getId() {
+        return id;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
