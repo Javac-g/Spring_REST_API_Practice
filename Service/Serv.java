@@ -1,5 +1,6 @@
 package com.MaksDenysov.Service;
 
+import com.MaksDenysov.Controller.Expirience;
 import com.MaksDenysov.Controller.ResponseDTO;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,41 @@ public class Serv {
         responseDTO.setName("Person name is: " + requestDTO.getName());
         responseDTO.setPosition("Person position is: " + requestDTO.getPosition());
         responseDTO.setId(requestDTO.getId());
+
+        for(Expirience exp : requestDTO.getExpirienceList()){
+            if(exp.getValues().equals("100")){
+
+                responseDTO.setExpResult(ExpResultEnum.BEST);
+                break;
+
+            } else if(exp.getValues().equals("90")){
+
+                responseDTO.setExpResult(ExpResultEnum.PERFECT);
+                break;
+
+            } else if(exp.getValues().equals("80")){
+
+                responseDTO.setExpResult(ExpResultEnum.GOOD);
+                break;
+
+            } else if(exp.getValues().equals("70")){
+
+                responseDTO.setExpResult(ExpResultEnum.NORMAL);
+                break;
+            } else if(exp.getValues().equals("60")){
+
+                responseDTO.setExpResult(ExpResultEnum.WEAK);
+                break;
+            } else if(exp.getValues().equals("50")){
+
+                responseDTO.setExpResult(ExpResultEnum.BAD);
+                break;
+            }
+        }
+
+
+
+
         datalist.add(responseDTO);
         return responseDTO;
 

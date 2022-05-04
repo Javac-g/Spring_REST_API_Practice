@@ -1,10 +1,26 @@
 package com.MaksDenysov.Controller;
 
+import com.MaksDenysov.Service.ExpResultEnum;
+
 public class ResponseDTO {
 
+    private ExpResultEnum expResult;
     private String name;
     private String position;
     private Integer id;
+
+    private Skills skills;
+
+
+
+
+    public ExpResultEnum getExpResult() {
+        return expResult;
+    }
+
+    public void setExpResult(ExpResultEnum expResult) {
+        this.expResult = expResult;
+    }
 
     public String getName() {
         return name;
