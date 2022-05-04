@@ -12,7 +12,13 @@ public class ResponseDTO {
     private Skills skills;
 
 
+    public Skills getSkills() {
+        return skills;
+    }
 
+    public void setSkills(Skills skills) {
+        this.skills = skills;
+    }
 
     public ExpResultEnum getExpResult() {
         return expResult;

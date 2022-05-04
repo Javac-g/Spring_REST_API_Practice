@@ -18,6 +18,7 @@ public class Serv {
         responseDTO.setName("Person name is: " + requestDTO.getName());
         responseDTO.setPosition("Person position is: " + requestDTO.getPosition());
         responseDTO.setId(requestDTO.getId());
+        responseDTO.setSkills(requestDTO.getSkills());
 
         for(Expirience exp : requestDTO.getExpirienceList()){
             if(exp.getValues().equals("100")){
