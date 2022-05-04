@@ -24,7 +24,7 @@ public class Contr {
        return serv.create(userDTO);
 
     }
-    @PostMapping(value = "/getData" ,produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/getData" ,produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseDTO returnData(@RequestParam Integer id){
 
