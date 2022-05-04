@@ -43,7 +43,7 @@ public class Contr {
     @ResponseBody
     public String deleteData(@RequestParam Integer id){
 
-        return "Was deleted person №: " + serv.delete(id);
+        return String.format("Person №: %d was deleted", serv.delete(id));
 
     }
 
