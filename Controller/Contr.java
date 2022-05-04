@@ -21,45 +21,29 @@ public class Contr {
     @ResponseBody
     public ResponseDTO processData(@RequestBody RequestDTO userDTO){
 
-       return serv.forth(userDTO);
+       return serv.create(userDTO);
 
     }
     @PostMapping(value = "/getData" ,produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseDTO returnData(@RequestParam Integer id){
 
-        return serv.five(id);
+        return serv.find(id);
+
 
     }
+    @PutMapping(value = "/updateData" , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseDTO updateData(@RequestBody RequestDTO update,@RequestParam Integer id){
 
-
-
-
-    @RequestMapping(value = "/hello" , method = RequestMethod.GET)
-    @ResponseBody
-    String getHello(){
-
-        return serv.first();
+        return serv.update(update,id);
 
     }
-    @GetMapping("/name")
-    @ResponseBody
-    String getInfo(@RequestParam String name){
-        return serv.third(name);
-    }
+    @DeleteMapping(value = "/deleteData",produces = MediaType.APPLICATION_JSON_VALUE)
+    public String deleteData(@RequestParam Integer id){
 
-    @RequestMapping(value = "/sum",method = RequestMethod.POST)
-    @ResponseBody
-    String getSum(@RequestParam int a, @RequestParam int b, @RequestBody String body){
-
-        return serv.second(a+b, body);
+        return "Was deletes person №: " + serv.delete(id);
 
     }
-
-
-
-
-
 
 
 

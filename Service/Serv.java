@@ -10,20 +10,9 @@ import java.util.List;
 public class Serv {
 
     public List<ResponseDTO> datalist = new ArrayList<>();
-    public String first(){
 
-        return "Your app working well";
 
-    }
-    public String second(int a, String body){
-        return body + ": " + a ;
-    }
-
-    public String third(String name){
-        return "Hello, your name is: " + name;
-    }
-
-    public ResponseDTO forth(RequestDTO requestDTO){
+    public ResponseDTO create(RequestDTO requestDTO){
         ResponseDTO responseDTO = new ResponseDTO();
         responseDTO.setName("Person name is: " + requestDTO.getName());
         responseDTO.setPosition("Person position is: " + requestDTO.getPosition());
@@ -32,7 +21,7 @@ public class Serv {
         return responseDTO;
 
     }
-    public ResponseDTO five(Integer id){
+    public ResponseDTO find(Integer id){
 
         for(ResponseDTO serch: datalist){
             if(serch.getId().equals(id)){
@@ -41,5 +30,34 @@ public class Serv {
         }
 
         return null;
+    }
+
+    public ResponseDTO update(RequestDTO requestDTO, Integer id){
+
+        ResponseDTO update = find(id);
+        if(update != null){
+            update.setId(requestDTO.getId());
+            update.setName(requestDTO.getName());
+            update.setPosition(requestDTO.getPosition());
+            return update;
+        }
+        return null;
+
+    }
+    public Integer delete(Integer id){
+        int indexToRemove = -1;
+        for (int i =0 ; i <= datalist.size(); i++){
+            if(datalist.get(i).getId().equals(id)){
+                indexToRemove = i;
+                break;
+            }
+        }
+        if(indexToRemove != -1){
+
+            datalist.remove(indexToRemove);
+
+        }
+        return indexToRemove;
+
     }
 }
