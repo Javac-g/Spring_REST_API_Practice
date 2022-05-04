@@ -17,13 +17,23 @@ public class Contr {
     private Serv serv;
 
 
-    @PostMapping(value = "/data", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/addData", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseDTO processData(@RequestBody RequestDTO userDTO){
 
        return serv.forth(userDTO);
 
     }
+    @PostMapping(value = "/getData" ,produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public ResponseDTO returnData(@RequestParam Integer id){
+
+        return serv.five(id);
+
+    }
+
+
+
 
     @RequestMapping(value = "/hello" , method = RequestMethod.GET)
     @ResponseBody
