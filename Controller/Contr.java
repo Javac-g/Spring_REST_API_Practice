@@ -22,6 +22,11 @@ public class Contr {
         return serv.first();
 
     }
+    @GetMapping("/name")
+    @ResponseBody
+    String getInfo(@RequestParam String name){
+        return serv.third(name);
+    }
 
     @RequestMapping(value = "/sum",method = RequestMethod.POST)
     @ResponseBody

@@ -15,7 +15,9 @@ public class Serv {
         return body + a ;
     }
 
-
+    public String third(String name){
+        return "Hello, your name is: " + name;
+    }
 
 
 }
