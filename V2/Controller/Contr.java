@@ -26,6 +26,13 @@ public class Contr {
     public ResponseDTO findData(@RequestParam Integer id){
         return serv.find(id);
     }
+    @PutMapping(value = "/update" , produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public ResponseDTO updateData(@RequestParam Integer id, @RequestBody RequestDTO requestDTO){
+
+        return serv.update(id, requestDTO);
+
+    }
 
 
 
