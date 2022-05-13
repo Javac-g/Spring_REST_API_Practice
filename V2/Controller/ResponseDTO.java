@@ -4,7 +4,7 @@ public class ResponseDTO {
 
     String name;
 
-    Integer age;
+    Integer id;
 
     Pet pet;
 
@@ -16,12 +16,12 @@ public class ResponseDTO {
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
+    public Integer getId() {
+        return id;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Pet getPet() {

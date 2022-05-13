@@ -5,7 +5,7 @@ import com.MaksDenysov.V2.Controller.Pet;
 public class RequestDTO {
 
     String name;
-    Integer age;
+    Integer id;
 
     Pet pet;
     public String getName() {
@@ -17,12 +17,12 @@ public class RequestDTO {
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
+    public Integer getId() {
+        return id;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Pet getPet() {

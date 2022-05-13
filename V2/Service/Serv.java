@@ -16,7 +16,7 @@ public class Serv {
 
         user.setName(requestDTO.getName());
 
-        user.setAge(requestDTO.getAge());
+        user.setId(requestDTO.getId());
 
         user.setPet(requestDTO.getPet());
 
@@ -26,11 +26,11 @@ public class Serv {
 
     }
 
-    public ResponseDTO find(String name){
+    public ResponseDTO find(Integer id){
 
         for(ResponseDTO search: datalist){
 
-            if(search.getName().equals(name)){
+            if(search.getId().equals(id)){
 
                 return search;
 
@@ -39,6 +39,24 @@ public class Serv {
         }
         return null;
 
+
+    }
+
+    public ResponseDTO update(Integer id, RequestDTO requestDTO){
+
+        ResponseDTO dataUP = find(id);
+
+        if( dataUP != null){
+
+            dataUP.setName(requestDTO.getName());
+
+            dataUP.setId(requestDTO.getId());
+
+            return dataUP;
+
+        }
+
+        return null;
 
     }
 
