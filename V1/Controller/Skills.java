@@ -1,4 +1,4 @@
-package com.MaksDenysov.Controller;
+package com.MaksDenysov.V1.Controller;
 
 public class Skills {
 

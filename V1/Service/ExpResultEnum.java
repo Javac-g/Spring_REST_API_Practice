@@ -1,4 +1,4 @@
-package com.MaksDenysov.Service;
+package com.MaksDenysov.V1.Service;
 
 public enum ExpResultEnum {
 

@@ -1,20 +1,15 @@
-package com.MaksDenysov.Service;
+package com.MaksDenysov.V1.Controller;
 
-import com.MaksDenysov.Controller.Expirience;
-import com.MaksDenysov.Controller.Skills;
+import com.MaksDenysov.V1.Service.ExpResultEnum;
 
-import java.util.ArrayList;
-import java.util.List;
+public class ResponseDTO {
 
-public class RequestDTO {
+    private ExpResultEnum expResult;
+    private String name;
+    private String position;
+    private Integer id;
 
-    String name;
-    String position;
-    Integer id;
-
-    Skills skills;
-
-    List<Expirience> expirienceList =new ArrayList<>();
+    private Skills skills;
 
 
     public Skills getSkills() {
@@ -25,12 +20,12 @@ public class RequestDTO {
         this.skills = skills;
     }
 
-    public List<Expirience> getExpirienceList() {
-        return expirienceList;
+    public ExpResultEnum getExpResult() {
+        return expResult;
     }
 
-    public void setExpirienceList(List<Expirience> expirienceList) {
-        this.expirienceList = expirienceList;
+    public void setExpResult(ExpResultEnum expResult) {
+        this.expResult = expResult;
     }
 
     public String getName() {

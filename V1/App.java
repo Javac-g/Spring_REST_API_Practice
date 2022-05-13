@@ -1,4 +1,4 @@
-package com.MaksDenysov;
+package com.MaksDenysov.V1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

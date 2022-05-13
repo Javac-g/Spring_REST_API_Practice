@@ -1,7 +1,7 @@
-package com.MaksDenysov.Service;
+package com.MaksDenysov.V1.Service;
 
-import com.MaksDenysov.Controller.Expirience;
-import com.MaksDenysov.Controller.ResponseDTO;
+import com.MaksDenysov.V1.Controller.Expirience;
+import com.MaksDenysov.V1.Controller.ResponseDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

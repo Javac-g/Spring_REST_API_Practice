@@ -1,8 +1,8 @@
-package com.MaksDenysov.Controller;
+package com.MaksDenysov.V1.Controller;
 
 
-import com.MaksDenysov.Service.Serv;
-import com.MaksDenysov.Service.RequestDTO;
+import com.MaksDenysov.V1.Service.Serv;
+import com.MaksDenysov.V1.Service.RequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
