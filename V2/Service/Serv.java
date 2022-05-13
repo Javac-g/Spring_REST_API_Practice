@@ -1,11 +1,14 @@
 package com.MaksDenysov.V2.Service;
 
 import com.MaksDenysov.V2.Controller.ResponseDTO;
+import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+@Service
 public class Serv {
 
     List<ResponseDTO> datalist = new ArrayList<>();
