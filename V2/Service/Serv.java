@@ -29,7 +29,7 @@ public class Serv {
 
 
     }
-    public void create(RequestDTO requestDTO){
+    public ResponseDTO create(RequestDTO requestDTO){
 
         ResponseDTO user = new ResponseDTO();
 
@@ -39,9 +39,12 @@ public class Serv {
 
         user.setPet(requestDTO.getPet());
 
+        log(user);
+
         datalist.add(user);
 
-        log(user);
+        return user;
+
 
 
 
