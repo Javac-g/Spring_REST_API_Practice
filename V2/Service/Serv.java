@@ -26,6 +26,22 @@ public class Serv {
 
     }
 
+    public ResponseDTO find(String name){
+
+        for(ResponseDTO search: datalist){
+
+            if(search.getName().equals(name)){
+
+                return search;
+
+            }
+
+        }
+        return null;
+
+
+    }
+
 
 
 }
