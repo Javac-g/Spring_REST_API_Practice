@@ -2,6 +2,7 @@ package com.MaksDenysov.V2.Service;
 
 import com.MaksDenysov.V2.Controller.ResponseDTO;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,25 @@ public class Serv {
 
     List<ResponseDTO> datalist = new ArrayList<>();
 
+    public void log(ResponseDTO responseDTO){
 
+        try(DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream("c/Users/Max.000/IdeaProjects/Spring_Json/src/main/java/com/MaksDenysov/V2/datalog.txt"))){
+
+            dataOutputStream.writeUTF("name: " + responseDTO.getName());
+
+            dataOutputStream.writeUTF("Id: " + responseDTO.getId());
+
+
+
+
+
+        } catch (IOException e){
+            e.printStackTrace();
+
+        }
+
+
+    }
     public void create(RequestDTO requestDTO){
 
         ResponseDTO user = new ResponseDTO();
@@ -21,6 +40,8 @@ public class Serv {
         user.setPet(requestDTO.getPet());
 
         datalist.add(user);
+
+        log(user);
 
 
 
