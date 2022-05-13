@@ -3,6 +3,7 @@ package com.MaksDenysov.V2.Controller;
 
 import com.MaksDenysov.V2.Service.RequestDTO;
 import com.MaksDenysov.V2.Service.Serv;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/DB")
 public class Contr {
 
+    @Autowired
     private Serv serv;
 
     @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -31,6 +33,13 @@ public class Contr {
     public ResponseDTO updateData(@RequestParam Integer id, @RequestBody RequestDTO requestDTO){
 
         return serv.update(id, requestDTO);
+
+    }
+    @DeleteMapping(value = "/delete", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String deleteData(@RequestParam Integer id){
+
+        return serv.printMessage("Was deleted user № - ") + serv.delete(id);
 
     }
 

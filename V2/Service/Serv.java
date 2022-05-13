@@ -9,7 +9,11 @@ import java.util.List;
 public class Serv {
 
     List<ResponseDTO> datalist = new ArrayList<>();
+    public String printMessage(String msg){
 
+        return msg;
+
+    }
     public void log(ResponseDTO responseDTO){
 
         try(DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream("c/Users/Max.000/IdeaProjects/Spring_Json/src/main/java/com/MaksDenysov/V2/datalog.txt"))){
