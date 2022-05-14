@@ -8,14 +8,15 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+
+@RequestMapping("/Data")
 @Controller
-@RequestMapping("/DB")
 public class Contr {
 
     @Autowired
     private Serv serv;
 
-    @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/addData", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseDTO addData(@RequestBody RequestDTO requestDTO){
 
@@ -26,6 +27,7 @@ public class Contr {
     @GetMapping(value = "/get",produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseDTO findData(@RequestParam Integer id){
+
         return serv.find(id);
     }
     @PutMapping(value = "/update" , produces = MediaType.APPLICATION_JSON_VALUE)
@@ -39,7 +41,7 @@ public class Contr {
     @ResponseBody
     public String deleteData(@RequestParam Integer id){
 
-        return serv.printMessage("Was deleted user № - ") + serv.delete(id);
+        return "Was deleted N - " + serv.delete(id);
 
     }
 

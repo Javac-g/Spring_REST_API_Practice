@@ -4,6 +4,7 @@ import com.MaksDenysov.V2.Controller.ResponseDTO;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,49 +12,88 @@ import java.util.List;
 @Service
 public class Serv {
 
-    List<ResponseDTO> datalist = new ArrayList<>();
-    public String printMessage(String msg){
+    public List<ResponseDTO> datalist = new ArrayList<>();
 
-        return msg;
-
-    }
     public void log(ResponseDTO responseDTO){
 
-        try(DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream("c/Users/Max.000/IdeaProjects/Spring_Json/src/main/java/com/MaksDenysov/V2/datalog.txt"))){
+            String path = "datalog.dat";
 
-            dataOutputStream.writeUTF("name: " + responseDTO.getName());
+            try(DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream(path,true))){
 
-            dataOutputStream.writeUTF("Id: " + responseDTO.getId());
+                dataOutputStream.writeUTF("\nName: " + responseDTO.getName());
+
+                dataOutputStream.writeUTF("\nId: "  + responseDTO.getId());
+
+            }catch (IOException e){
+
+                e.printStackTrace();
+
+            }
+
+            try(DataInputStream dataInputStream = new DataInputStream(new FileInputStream(path))){
+
+                dataInputStream.readUTF();
+
+            }catch (IOException e){
+                e.printStackTrace();
+
+            }
 
 
+    }
+    public void logTwo(ResponseDTO responseDTO){
 
+        byte[] name =("\nName: " + responseDTO.getName()).getBytes();
 
+        byte[] id = ("\nId: "+responseDTO.getId()).getBytes(); ;
 
-        } catch (IOException e){
+        String path = "log.txt";
+
+        ByteArrayOutputStream b = new ByteArrayOutputStream();
+
+        ByteArrayOutputStream C = new ByteArrayOutputStream();
+
+        try{
+
+            b.write(name);
+
+            C.write(id);
+
+        }catch (IOException e){
             e.printStackTrace();
+        }
 
+
+        try(FileOutputStream f = new FileOutputStream(path,true)) {
+
+            b.writeTo(f);
+
+            C.writeTo(f);
+
+        } catch (IOException e) {
+
+            throw new RuntimeException(e);
         }
 
 
     }
     public ResponseDTO create(RequestDTO requestDTO){
 
-        ResponseDTO user = new ResponseDTO();
+        ResponseDTO responseDTO = new ResponseDTO();
 
-        user.setName(requestDTO.getName());
+        responseDTO.setName(requestDTO.getName());
 
-        user.setId(requestDTO.getId());
+        responseDTO.setId(requestDTO.getId());
 
-        user.setPet(requestDTO.getPet());
+        responseDTO.setPet(requestDTO.getPet());
 
-        log(user);
+        log(responseDTO);
 
-        datalist.add(user);
+        logTwo(responseDTO);
 
-        return user;
+        datalist.add(responseDTO);
 
-
-
+        return responseDTO;
 
     }
 

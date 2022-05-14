@@ -2,11 +2,20 @@ package com.MaksDenysov.V2.Controller;
 
 public class ResponseDTO {
 
-    String name;
+   String name;
 
-    Integer id;
+   Integer id;
 
-    Pet pet;
+
+   Pet pet;
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
 
     public String getName() {
         return name;
@@ -24,11 +33,5 @@ public class ResponseDTO {
         this.id = id;
     }
 
-    public Pet getPet() {
-        return pet;
-    }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
 }

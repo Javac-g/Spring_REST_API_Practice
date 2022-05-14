@@ -1,22 +1,22 @@
 package com.MaksDenysov.V2.Controller;
 
 public class Pet {
-    String petName;
-    Integer petAge;
+    String color;
+    Integer age;
 
-    public String getPetName() {
-        return petName;
+    public String getColor() {
+        return color;
     }
 
-    public void setPetName(String petName) {
-        this.petName = petName;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public Integer getPetAge() {
-        return petAge;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setPetAge(Integer petAge) {
-        this.petAge = petAge;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 }

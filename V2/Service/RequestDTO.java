@@ -4,10 +4,22 @@ import com.MaksDenysov.V2.Controller.Pet;
 
 public class RequestDTO {
 
+    public RequestDTO() {
+    }
+
     String name;
     Integer id;
 
     Pet pet;
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
+
     public String getName() {
 
         return name;
@@ -25,11 +37,5 @@ public class RequestDTO {
         this.id = id;
     }
 
-    public Pet getPet() {
-        return pet;
-    }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
 }
