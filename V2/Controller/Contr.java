@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.*;
 
 public class Contr {
 
+    public Contr(Serv serv) {
+        this.serv = serv;
+    }
 
     private Serv serv;
 

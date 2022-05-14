@@ -12,7 +12,7 @@ public class SpringConfigurationFactory {
     @Bean
     public Contr controllerBean(){
 
-        return new Contr();
+        return new Contr(serviceBean());
 
     }
     @Bean
