@@ -45,6 +45,20 @@ public class Serv {
 
     }
 
+    public ResponseDTO update(Integer id, RequestDTO requestDTO){
+        ResponseDTO responseDTO = read(id);
+
+        if (responseDTO != null){
+            responseDTO.setName(requestDTO.getName());
+            responseDTO.setId(requestDTO.getId());
+            responseDTO.setPet(requestDTO.getPet());
+            return responseDTO;
+        }
+        return null;
+
+
+    }
+
 
 
 
