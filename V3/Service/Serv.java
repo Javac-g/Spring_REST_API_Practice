@@ -58,6 +58,29 @@ public class Serv {
 
 
     }
+    public Integer delete(Integer id){
+
+        int indextoremove = -1;
+
+        for (int i = 0; i < datalist.size();i++){
+
+            if (datalist.get(i).getId().equals(id)) {
+
+                indextoremove = i;
+
+            }
+        }
+        if (indextoremove != -1){
+
+            datalist.remove(indextoremove);
+
+            return indextoremove;
+
+        }
+        return null;
+
+
+    }
 
 
 
