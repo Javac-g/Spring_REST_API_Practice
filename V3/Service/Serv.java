@@ -4,8 +4,6 @@ import com.MaksDenysov.V3.Controller.ResponseDTO;
 import com.MaksDenysov.V3.Controller.Skill;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,23 +34,27 @@ public class Serv {
         logTwo(responseDTO);
 
         for (Skill skl: requestDTO.getSkilldata()){
-            if(skl.getValues().equals("100")){
+            switch (skl.getValues()) {
+                case "100":
 
-                responseDTO.setSkillsResultEnum(SkillsResultEnum.PERFECT);
-            }else if(skl.getValues().equals("90")){
+                    responseDTO.setSkillsResultEnum(SkillsResultEnum.PERFECT);
+                    break;
+                case "90":
 
-                responseDTO.setSkillsResultEnum(SkillsResultEnum.GOOD);
-            }
-            else if(skl.getValues().equals("80")){
+                    responseDTO.setSkillsResultEnum(SkillsResultEnum.GOOD);
+                    break;
+                case "80":
 
-                responseDTO.setSkillsResultEnum(SkillsResultEnum.NORMAL);
-            }else if(skl.getValues().equals("70")){
+                    responseDTO.setSkillsResultEnum(SkillsResultEnum.NORMAL);
+                    break;
+                case "70":
 
-                responseDTO.setSkillsResultEnum(SkillsResultEnum.WEAK);
-            }
-            else if(skl.getValues().equals("60")){
+                    responseDTO.setSkillsResultEnum(SkillsResultEnum.WEAK);
+                    break;
+                case "60":
 
-                responseDTO.setSkillsResultEnum(SkillsResultEnum.BAD);
+                    responseDTO.setSkillsResultEnum(SkillsResultEnum.BAD);
+                    break;
             }
         }
 
