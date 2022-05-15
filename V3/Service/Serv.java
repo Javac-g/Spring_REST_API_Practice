@@ -1,6 +1,7 @@
 package com.MaksDenysov.V3.Service;
 
 import com.MaksDenysov.V3.Controller.ResponseDTO;
+import com.MaksDenysov.V3.Controller.Skill;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -33,6 +34,27 @@ public class Serv {
         logOne(responseDTO);
 
         logTwo(responseDTO);
+
+        for (Skill skl: requestDTO.getSkilldata()){
+            if(skl.getValues().equals("100")){
+
+                responseDTO.setSkillsResultEnum(SkillsResultEnum.PERFECT);
+            }else if(skl.getValues().equals("90")){
+
+                responseDTO.setSkillsResultEnum(SkillsResultEnum.GOOD);
+            }
+            else if(skl.getValues().equals("80")){
+
+                responseDTO.setSkillsResultEnum(SkillsResultEnum.NORMAL);
+            }else if(skl.getValues().equals("70")){
+
+                responseDTO.setSkillsResultEnum(SkillsResultEnum.WEAK);
+            }
+            else if(skl.getValues().equals("60")){
+
+                responseDTO.setSkillsResultEnum(SkillsResultEnum.BAD);
+            }
+        }
 
         return  responseDTO;
 

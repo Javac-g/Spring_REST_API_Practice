@@ -1,6 +1,10 @@
 package com.MaksDenysov.V3.Service;
 
 import com.MaksDenysov.V3.Controller.Pet;
+import com.MaksDenysov.V3.Controller.Skill;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RequestDTO {
 
@@ -9,6 +13,16 @@ public class RequestDTO {
     Integer id;
 
     Pet pet;
+
+    List<Skill> skilldata  = new ArrayList<>();
+
+    public List<Skill> getSkilldata() {
+        return skilldata;
+    }
+
+    public void setSkilldata(List<Skill> skilldata) {
+        this.skilldata = skilldata;
+    }
 
     public Pet getPet() {
         return pet;
