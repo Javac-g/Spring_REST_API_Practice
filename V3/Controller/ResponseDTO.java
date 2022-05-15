@@ -1,22 +1,10 @@
-package com.MaksDenysov.V3.Service;
+package com.MaksDenysov.V3.Controller;
 
-import com.MaksDenysov.V3.Controller.Pet;
-
-public class RequestDTO {
-
-
+public class ResponseDTO {
     String name;
     Integer id;
 
     Pet pet;
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
 
     public String getName() {
         return name;
@@ -32,5 +20,13 @@ public class RequestDTO {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
     }
 }
