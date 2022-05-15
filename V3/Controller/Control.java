@@ -40,6 +40,14 @@ public class Control {
 
     }
 
+    @DeleteMapping(value = "/d",produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public Integer deleteData(@RequestParam Integer id){
+
+       return service.delete(id);
+
+    }
+
 
 
 
