@@ -32,6 +32,14 @@ public class Control {
 
     }
 
+    @PutMapping(value = "/u",produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public ResponseDTO updateData(@RequestParam Integer id, @RequestBody RequestDTO requestDTO){
+
+        return service.update(id, requestDTO);
+
+    }
+
 
 
 
