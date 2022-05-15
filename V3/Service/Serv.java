@@ -2,10 +2,9 @@ package com.MaksDenysov.V3.Service;
 
 import com.MaksDenysov.V3.Controller.ResponseDTO;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +29,10 @@ public class Serv {
         responseDTO.setPet(requestDTO.getPet());
 
         datalist.add(responseDTO);
+
+        logOne(responseDTO);
+
+        logTwo(responseDTO);
 
         return  responseDTO;
 
@@ -123,7 +126,22 @@ public class Serv {
 
     }
 
+    public void logTwo(ResponseDTO responseDTO){
 
+        try(DataOutputStream D = new DataOutputStream( new FileOutputStream("log.dat",true))){
+
+            D.writeUTF("Name: " + responseDTO.getName());
+
+            D.writeUTF("ID: " + responseDTO.getId());
+
+
+        } catch (IOException e) {
+
+            throw new RuntimeException(e);
+        }
+
+
+    }
 
 
 }
