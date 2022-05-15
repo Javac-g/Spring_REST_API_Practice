@@ -31,6 +31,20 @@ public class Serv {
 
     }
 
+    public ResponseDTO read(Integer id){
+
+        for (ResponseDTO search: datalist){
+
+            if(search.getId().equals(id)){
+
+                return search;
+
+            }
+        }
+        return null;
+
+    }
+
 
 
 
