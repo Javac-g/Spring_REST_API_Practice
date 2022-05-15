@@ -13,6 +13,12 @@ public class Serv {
 
     public List<ResponseDTO> datalist = new ArrayList<>();
 
+    public String printMessage(String msg){
+
+        return (msg);
+
+    }
+
     public void log(ResponseDTO responseDTO){
 
             String path = "datalog.dat";
