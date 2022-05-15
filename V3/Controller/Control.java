@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/person")
 public class Control {
 
+    public Control(Serv service) {
+
+        this.service = service;
+    }
+
     private Serv service;
 
     @PostMapping(value = "/a" , produces = MediaType.APPLICATION_JSON_VALUE)
