@@ -14,6 +14,16 @@ public class ResponseDTO {
 
     Pet pet;
 
+    SkillResultEnum skillResultEnum;
+
+    public SkillResultEnum getSkillResultEnum() {
+        return skillResultEnum;
+    }
+
+    public void setSkillResultEnum(SkillResultEnum skillResultEnum) {
+        this.skillResultEnum = skillResultEnum;
+    }
+
     public Pet getPet() {
         return pet;
     }
