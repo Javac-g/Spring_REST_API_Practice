@@ -1,6 +1,6 @@
 package com.MaksDenysov.V4.Controller;
 
-public class ResponseDTO {
+public class RequestDTO {
 
     String name;
 

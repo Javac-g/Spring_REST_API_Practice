@@ -1,6 +1,6 @@
 package com.MaksDenysov.V4.Service;
 
-public class RequestDTO {
+public class ResponseDTO {
 
     String name;
 
