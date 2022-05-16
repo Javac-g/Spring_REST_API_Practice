@@ -29,6 +29,13 @@ public class Contr {
         return serv.read(id);
 
     }
+    @PostMapping(value = "/u",produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public ResponseDTO update(@RequestParam Integer id, @RequestBody RequestDTO requestDTO){
+
+        return serv.update(id, requestDTO);
+
+    }
 
 
 
