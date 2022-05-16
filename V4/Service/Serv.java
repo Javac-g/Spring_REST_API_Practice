@@ -46,6 +46,26 @@ public class Serv {
         }
 
         return null;
+    }
+
+    public ResponseDTO update(Integer id, RequestDTO update){
+
+        ResponseDTO updatedPerson = read(id);
+
+        if(updatedPerson != null){
+
+            updatedPerson.setName(update.getName());
+
+            updatedPerson.setPosition(update.getPosition());
+
+            updatedPerson.setSalary(update.getSalary());
+
+            updatedPerson.setId(update.getId());
+
+            return updatedPerson;
+
+        }
+        return null;
 
     }
 
