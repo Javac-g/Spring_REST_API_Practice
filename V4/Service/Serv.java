@@ -1,6 +1,7 @@
 package com.MaksDenysov.V4.Service;
 
 import com.MaksDenysov.V4.Controller.RequestDTO;
+import com.MaksDenysov.V4.Controller.Skill;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,24 @@ public class Serv {
 
         person.setSalary(json.getSalary());
 
+        for(Skill skill: json.getSkilldata()){
+
+            switch (skill.getBackend()){
+
+                case"spring":
+
+                    person.setSkillResultEnum(SkillResultEnum.GOOD);
+
+                case "php":
+
+                    person.setSkillResultEnum(SkillResultEnum.NORMAL);
+
+                case "js":
+
+                    person.setSkillResultEnum(SkillResultEnum.WEAK);
+
+            }
+        }
 
         datalist.add(person);
         return person;
