@@ -36,6 +36,13 @@ public class Contr {
         return serv.update(id, requestDTO);
 
     }
+    @DeleteMapping(value = "/d",produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String delete(@RequestParam Integer id){
+
+        return serv.print("Deleted person № ") + serv.delete(id);
+
+    }
 
 
 
