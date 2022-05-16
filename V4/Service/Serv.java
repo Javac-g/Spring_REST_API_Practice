@@ -16,10 +16,15 @@ public class Serv {
     }
 
     public ResponseDTO create(RequestDTO json){
+
         ResponseDTO person = new ResponseDTO();
+
         person.setName(json.getName());
+
         person.setPosition(json.getPosition());
+
         person.setId(json.getId());
+
         person.setSalary(json.getSalary());
 
 
@@ -27,7 +32,47 @@ public class Serv {
         return person;
 
 
+    }
+    public ResponseDTO read(Integer id){
 
+        for (ResponseDTO search: datalist){
+
+            if (search.getId().equals(id)){
+
+                return search;
+
+            }
+
+        }
+
+        return null;
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
