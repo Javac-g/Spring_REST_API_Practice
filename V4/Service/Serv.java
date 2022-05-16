@@ -3,10 +3,8 @@ package com.MaksDenysov.V4.Service;
 import com.MaksDenysov.V4.Controller.RequestDTO;
 import com.MaksDenysov.V4.Controller.Skill;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +13,29 @@ public class Serv {
 
     List<ResponseDTO> datalist = new ArrayList<>();
 
+
     public String print(String msg){
 
         return msg;
+
+    }
+
+    public void LogDat(ResponseDTO R){
+
+        try(DataOutputStream D = new DataOutputStream(new FileOutputStream("V4log.dat",true))){
+
+           D.writeUTF("\nName: " + R.getName());
+
+           D.writeUTF("\nPosition: " + R.getPosition());
+
+           D.writeUTF("\nId: " + R.getId());
+
+           D.writeUTF("\nSalary: " + R.getSalary());
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
     public void LogText(ResponseDTO R){
@@ -88,6 +106,10 @@ public class Serv {
         }
 
         datalist.add(person);
+
+        LogText(person);
+        LogDat(person);
+
         return person;
 
 
