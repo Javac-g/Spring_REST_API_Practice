@@ -10,6 +10,16 @@ public class RequestDTO {
 
     Integer id;
 
+    Pet pet;
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
+
     public String getName() {
         return name;
     }

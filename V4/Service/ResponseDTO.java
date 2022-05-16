@@ -1,5 +1,7 @@
 package com.MaksDenysov.V4.Service;
 
+import com.MaksDenysov.V4.Controller.Pet;
+
 public class ResponseDTO {
 
     String name;
@@ -9,6 +11,16 @@ public class ResponseDTO {
     Integer salary;
 
     Integer id;
+
+    Pet pet;
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
 
     public String getName() {
         return name;
