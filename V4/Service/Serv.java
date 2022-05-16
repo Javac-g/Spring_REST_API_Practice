@@ -3,6 +3,11 @@ package com.MaksDenysov.V4.Service;
 import com.MaksDenysov.V4.Controller.RequestDTO;
 import com.MaksDenysov.V4.Controller.Skill;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +18,41 @@ public class Serv {
     public String print(String msg){
 
         return msg;
+
+    }
+    public void LogText(ResponseDTO R){
+
+        byte[] name = ("\nName: " + R.getName()).getBytes();
+        byte[] id = ("\nId: " + R.getId()).getBytes();
+        byte[] position = ("\nPosition: " + R.getPosition()).getBytes();
+        byte[] salary = ("\nSalary: " + R.getSalary()).getBytes();
+
+        ByteArrayOutputStream B = new ByteArrayOutputStream();
+        try{
+
+            B.write(name);
+
+            B.write(position);
+
+            B.write(id);
+
+            B.write(salary);
+
+        } catch (IOException e) {
+
+            throw new RuntimeException(e);
+
+        }
+
+        try(FileOutputStream F = new FileOutputStream("/textlog.txt")) {
+
+            B.writeTo(F);
+
+        } catch (IOException e) {
+
+            throw new RuntimeException(e);
+
+        }
 
     }
 
