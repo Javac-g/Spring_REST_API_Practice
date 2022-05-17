@@ -108,6 +108,31 @@ public class Services {
 
 
     }
+    public ResponseDTO update(Integer id,RequestDTO income){
+
+        ResponseDTO updated = read(id);
+
+        if(updated != null){
+
+            updated.setName(income.getName());
+
+            updated.setPosition(income.getPosition());
+
+            updated.setId(income.getId());
+
+            updated.setAge(income.getAge());
+
+            textLog("Updated.txt" ,updated);
+            dataLog("Updated.dat",updated);
+
+            return updated;
+
+        }
+
+        return null;
+
+
+    }
 
 
 }
