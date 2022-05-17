@@ -39,4 +39,11 @@ public class Controll {
         return services.update(id, requestDTO);
 
     }
+
+    @DeleteMapping(value = "/d",produces = MediaType.APPLICATION_JSON_VALUE)
+    public String delete(@RequestParam Integer id){
+
+        return services.printMessage("Was deleted person №-") + services.delete(id);
+
+    }
 }
