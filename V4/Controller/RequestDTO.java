@@ -1,5 +1,6 @@
 package com.MaksDenysov.V4.Controller;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class RequestDTO {
 
     Pet pet;
 
-    List<Skill> skilldata; // = new ArrayList<>();
+    List<Skill> skilldata  = new ArrayList<>();
 
     public List<Skill> getSkilldata() {
         return skilldata;

@@ -5,7 +5,6 @@ import com.MaksDenysov.V4.Controller.Skill;
 
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,7 +61,7 @@ public class Serv {
 
         }
 
-        try(FileOutputStream F = new FileOutputStream("/textlog.txt")) {
+        try(FileOutputStream F = new FileOutputStream("textlog.txt")) {
 
             B.writeTo(F);
 
@@ -86,21 +85,27 @@ public class Serv {
 
         person.setSalary(json.getSalary());
 
+        person.setPet(json.getPet());
+
+
         for(Skill skill: json.getSkilldata()){
 
             switch (skill.getBackend()){
 
-                case"spring":
+                case "spring":
 
                     person.setSkillResultEnum(SkillResultEnum.GOOD);
+                    break;
 
                 case "php":
 
                     person.setSkillResultEnum(SkillResultEnum.NORMAL);
+                    break;
 
                 case "js":
 
                     person.setSkillResultEnum(SkillResultEnum.WEAK);
+                    break;
 
             }
         }
