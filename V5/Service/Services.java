@@ -1,5 +1,6 @@
 package com.MaksDenysov.V5.Service;
 
+import com.MaksDenysov.V5.Controller.Pet;
 import com.MaksDenysov.V5.Controller.RequestDTO;
 
 import java.io.*;
@@ -66,7 +67,36 @@ public class Services {
 
 
     }
+    public ResponseDTO enumer(RequestDTO requestDTO,ResponseDTO r){
 
+        for (Pet pet:requestDTO.getPetList()){
+
+            switch (pet.getValue()){
+
+                case "guard":
+
+                    r.setType(Pet_Type.DOG);
+
+                    break;
+
+                case "swim":
+
+                    r.setType(Pet_Type.FISH);
+
+                    break;
+
+                case "jump":
+
+                    r.setType(Pet_Type.CAT);
+
+                    break;
+
+            }
+
+        }
+
+        return r;
+    }
     public ResponseDTO create(RequestDTO requestDTO){
 
         ResponseDTO newUser = new ResponseDTO();
@@ -79,7 +109,11 @@ public class Services {
 
         newUser.setId(requestDTO.getId());
 
+        enumer(requestDTO,newUser);
+
         datalist.add(newUser);
+
+
 
         textLog("Created.txt",newUser);
 

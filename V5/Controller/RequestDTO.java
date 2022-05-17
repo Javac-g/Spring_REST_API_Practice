@@ -1,5 +1,8 @@
 package com.MaksDenysov.V5.Controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class RequestDTO {
     String name;
     String position;
@@ -8,6 +11,16 @@ public class RequestDTO {
     boolean have_friends;
 
     Tools tools;
+
+    List<Pet> petList = new ArrayList<>();
+
+    public List<Pet> getPetList() {
+        return petList;
+    }
+
+    public void setPetList(List<Pet> petList) {
+        this.petList = petList;
+    }
 
     public Tools getTools() {
         return tools;

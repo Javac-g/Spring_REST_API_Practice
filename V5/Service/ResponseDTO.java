@@ -11,6 +11,16 @@ public class ResponseDTO {
 
     Tools tools;
 
+    Pet_Type type;
+
+    public Pet_Type getType() {
+        return type;
+    }
+
+    public void setType(Pet_Type type) {
+        this.type = type;
+    }
+
     public Tools getTools() {
         return tools;
     }
