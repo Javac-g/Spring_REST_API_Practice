@@ -7,6 +7,16 @@ public class RequestDTO {
     Integer id;
     boolean have_friends;
 
+    Tools tools;
+
+    public Tools getTools() {
+        return tools;
+    }
+
+    public void setTools(Tools tools) {
+        this.tools = tools;
+    }
+
     public String getPosition() {
         return position;
     }
