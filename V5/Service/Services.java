@@ -100,6 +100,7 @@ public class Services {
     public ResponseDTO create(RequestDTO requestDTO){
 
         ResponseDTO newUser = new ResponseDTO();
+        ResponseDTO user = new ResponseDTO();
 
         newUser.setName(requestDTO.getName());
 
@@ -109,9 +110,9 @@ public class Services {
 
         newUser.setId(requestDTO.getId());
 
-        enumer(requestDTO,newUser);
+        user = enumer(requestDTO,newUser);
 
-        datalist.add(newUser);
+        datalist.add(user);
 
 
 
@@ -119,7 +120,7 @@ public class Services {
 
         dataLog("Created.dat",newUser);
 
-        return newUser;
+        return user;
 
     }
 
