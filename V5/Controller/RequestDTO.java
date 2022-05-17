@@ -46,7 +46,7 @@ public class RequestDTO {
         this.age = age;
     }
 
-    public boolean isHave_friends() {
+    public boolean getHave_friends() {
         return have_friends;
     }
 

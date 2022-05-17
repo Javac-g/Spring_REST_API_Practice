@@ -21,7 +21,8 @@ public class Services {
         byte[] bytes = ("\nName: " + responseDTO.getName() +
                         "\nPosition: " + responseDTO.getPosition() +
                         "\nAge: " + responseDTO.getAge() +
-                        "\nId: " + responseDTO.getId()).getBytes();
+                        "\nId: " + responseDTO.getId() +
+                        "\nHave friends: " + responseDTO.getHave_friends()).getBytes();
 
         ByteArrayOutputStream b = new ByteArrayOutputStream();
 
@@ -58,6 +59,8 @@ public class Services {
             d.writeUTF("Age: " + responseDTO.getAge());
 
             d.writeUTF("Id: " + responseDTO.getId());
+
+            d.writeUTF("Have friends: " + responseDTO.getHave_friends());
 
 
 
@@ -109,6 +112,10 @@ public class Services {
         newUser.setAge(requestDTO.getAge());
 
         newUser.setId(requestDTO.getId());
+
+        newUser.setHave_friends(requestDTO.getHave_friends());
+
+        newUser.setTools(requestDTO.getTools());
 
         user = enumer(requestDTO,newUser);
 
