@@ -134,5 +134,32 @@ public class Services {
 
     }
 
+    public Integer delete(Integer id){
+
+        int removeId = -1;
+
+        for (int i = 0; i < datalist.size(); i++){
+
+            if (datalist.get(i).getId().equals(id)){
+
+                removeId = i;
+                textLog("Deleted.txt",datalist.get(removeId));
+                dataLog("Deleted.dat",datalist.get(removeId));
+
+
+            }
+
+        }
+        if (removeId != -1){
+
+            datalist.remove(removeId);
+
+            return removeId;
+
+        }
+        return null;
+
+    }
+
 
 }
