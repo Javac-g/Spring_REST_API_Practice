@@ -89,5 +89,25 @@ public class Services {
 
     }
 
+    public ResponseDTO read(Integer id){
+
+        for (ResponseDTO user: datalist){
+
+            if (user.getId().equals(id)){
+
+                textLog("Search.txt",user);
+                dataLog("search.dat",user);
+
+                return user;
+
+            };
+
+        }
+
+        return null;
+
+
+    }
+
 
 }
