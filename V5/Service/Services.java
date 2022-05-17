@@ -1,16 +1,21 @@
 package com.MaksDenysov.V5.Service;
 
+import com.MaksDenysov.V5.Controller.RequestDTO;
+
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Services {
 
+    List<ResponseDTO> datalist = new ArrayList<>();
     public String printMessage(String msg){
 
         return msg;
 
     }
 
-    public void textLog(ResponseDTO responseDTO){
+    public void textLog(String filename,ResponseDTO responseDTO){
 
         byte[] bytes = ("\nName: " + responseDTO.getName() +
                         "\nPosition: " + responseDTO.getPosition() +
@@ -29,7 +34,7 @@ public class Services {
 
         }
 
-        try(FileOutputStream F = new FileOutputStream("V5_Text_Log.txt",true)){
+        try(FileOutputStream F = new FileOutputStream(filename,true)){
 
             b.writeTo(F);
 
@@ -59,6 +64,28 @@ public class Services {
             throw new RuntimeException(e);
         }
 
+
+    }
+
+    public ResponseDTO create(RequestDTO requestDTO){
+
+        ResponseDTO newUser = new ResponseDTO();
+
+        newUser.setName(requestDTO.getName());
+
+        newUser.setPosition(requestDTO.getPosition());
+
+        newUser.setAge(requestDTO.getAge());
+
+        newUser.setId(requestDTO.getId());
+
+        datalist.add(newUser);
+
+        textLog("Created.txt",newUser);
+
+        dataLog("Created.dat",newUser);
+
+        return newUser;
 
     }
 
