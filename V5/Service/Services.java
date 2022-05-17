@@ -1,9 +1,6 @@
 package com.MaksDenysov.V5.Service;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class Services {
 
@@ -41,6 +38,27 @@ public class Services {
             throw new RuntimeException(e);
 
         }
+
+    }
+
+    public void dataLog(String filename,ResponseDTO responseDTO){
+
+        try(DataOutputStream d = new DataOutputStream(new FileOutputStream(filename, true))){
+
+            d.writeUTF("Name: " + responseDTO.getName());
+
+            d.writeUTF("Position: " + responseDTO.getPosition());
+
+            d.writeUTF("Age: " + responseDTO.getAge());
+
+            d.writeUTF("Id: " + responseDTO.getId());
+
+
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 
