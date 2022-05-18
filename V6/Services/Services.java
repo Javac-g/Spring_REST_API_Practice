@@ -67,6 +67,29 @@ public class Services {
         return null;
 
     }
+    public Integer delete(Integer id){
+
+        int indx = -1;
+
+        for (int i = 0; i < bd.size();i++){
+
+            if(bd.get(i).getId().equals(id)){
+
+                indx = i;
+
+            }
+
+        }
+
+        if (indx != -1){
+
+            bd.remove(indx);
+
+        }
+
+        return indx;
+
+    }
 
 
 
