@@ -9,6 +9,12 @@ import java.util.List;
 public class Services {
 
     List<ResponseDTO> bd = new ArrayList<>();
+
+    public String print(String msg){
+
+        return msg;
+
+    }
     public ResponseDTO create(RequestDTO json){
         ResponseDTO user = new ResponseDTO();
 
