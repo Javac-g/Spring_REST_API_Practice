@@ -12,9 +12,20 @@ public class ResponseDTO {
 
     String work;
 
+    Integer id;
+
+
     CarEnum carEnum;
 
     Tool tool;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

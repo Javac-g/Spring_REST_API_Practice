@@ -10,6 +10,16 @@ public class RequestDTO {
 
     String work;
 
+    Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     List<Car> cardata = new ArrayList<>();
 
     Tool tool;

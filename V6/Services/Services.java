@@ -36,4 +36,14 @@ public class Services {
 
 
     }
+    public ResponseDTO read(Strin id){
+        for (ResponseDTO fUser: bd){
+            if (fUser.g)
+        }
+    }
+
+
+
+
+    //File end
 }
