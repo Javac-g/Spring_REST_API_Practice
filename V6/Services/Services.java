@@ -52,6 +52,22 @@ public class Services {
 
     }
 
+    public ResponseDTO update(Integer id,RequestDTO requestDTO){
+        ResponseDTO upUser = read(id);
+
+        if(upUser != null){
+
+            upUser.setName(requestDTO.getName());
+
+            upUser.setWork(requestDTO.getWork());
+
+            upUser.setId(requestDTO.getId());
+
+        }
+        return null;
+
+    }
+
 
 
 
