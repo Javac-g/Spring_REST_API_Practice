@@ -36,10 +36,20 @@ public class Services {
 
 
     }
-    public ResponseDTO read(Strin id){
+    public ResponseDTO read(Integer id){
+
         for (ResponseDTO fUser: bd){
-            if (fUser.g)
+
+            if (fUser.getId().equals(id)){
+
+                return fUser;
+
+            }
+
         }
+
+        return null;
+
     }
 
 
