@@ -2,7 +2,12 @@ package com.MaksDenysov.V6.Services;
 
 import com.MaksDenysov.V6.Controller.Car;
 import com.MaksDenysov.V6.Controller.RequestDTO;
+import com.fasterxml.jackson.core.io.DataOutputAsStream;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +18,40 @@ public class Services {
     public String print(String msg){
 
         return msg;
+
+    }
+    public void logger(String filename,ResponseDTO data){
+
+        byte[] bytes = ("\nName: " + data.getName() + "\nWork: " + data.getWork() + "\nId: " + data.getId()).getBytes();
+
+        ByteArrayOutputStream b = new ByteArrayOutputStream();
+
+        try{
+
+            b.write(bytes);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        try(FileOutputStream F = new FileOutputStream(filename + ".txt",true);
+            DataOutputStream D = new DataOutputStream(new FileOutputStream(filename + ".dat",true))){
+
+            b.writeTo(F);
+
+            D.writeUTF("\nName: " + data.getName());
+
+            D.writeUTF("\nWork: " + data.getWork());
+
+            D.writeUTF("\nId: " + data.getId());
+
+        }catch (IOException e){
+
+            e.printStackTrace();
+
+        }
+
+
+
 
     }
     public ResponseDTO create(RequestDTO json){
@@ -38,6 +77,8 @@ public class Services {
 
         bd.add(user);
 
+        logger("Created(6)",user);
+
         return user;
 
 
@@ -47,6 +88,8 @@ public class Services {
         for (ResponseDTO fUser: bd){
 
             if (fUser.getId().equals(id)){
+
+                logger("Finded(6)",fUser);
 
                 return fUser;
 
@@ -69,6 +112,10 @@ public class Services {
 
             upUser.setId(requestDTO.getId());
 
+            logger("Updated(6)",upUser);
+
+            return upUser;
+
         }
         return null;
 
@@ -82,6 +129,7 @@ public class Services {
             if(bd.get(i).getId().equals(id)){
 
                 indx = i;
+                logger("Deleted(6)",bd.get(indx));
 
             }
 
