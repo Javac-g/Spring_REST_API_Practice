@@ -84,19 +84,41 @@ public class Services {
 
 
     public ResponseDTO Create(RequestDTO userData){
+
         ResponseDTO user = new ResponseDTO();
+
         user.setName(userData.getName());
+
         user.setPosition(userData.getPosition());
+
         user.setAge(userData.getAge());
+
         user.setId(userData.getId());
 
         user.setCar(userData.getCar());
+
+        E(user,userData);
 
         log("add",user);
 
         datalist.add(user);
 
         return user;
+
+    }
+
+    public ResponseDTO Read(Integer id ){
+
+        for (ResponseDTO res: datalist){
+
+            if (res.getId().equals(id)){
+
+                log("find",res);
+
+                return res;
+            }
+        }
+        return null;
 
     }
 
