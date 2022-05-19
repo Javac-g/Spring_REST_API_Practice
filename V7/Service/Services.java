@@ -122,6 +122,28 @@ public class Services {
 
     }
 
+    public ResponseDTO Update(Integer id,RequestDTO requestDTO){
+
+        ResponseDTO up = Read(id);
+
+        if (up != null){
+
+            up.setName(requestDTO.getName());
+
+            up.setPosition(requestDTO.getPosition());
+
+            up.setId(requestDTO.getId());
+
+            up.setAge(requestDTO.getAge());
+
+            log("update",up);
+
+            return up;
+        }
+
+        return null;
+
+    }
 }//Cass ends here
 
 
