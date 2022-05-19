@@ -80,6 +80,25 @@ public class Services {
         return user;
 
     }
+    // View layer Methods ends , start Model methods
+
+
+    public ResponseDTO Create(RequestDTO userData){
+        ResponseDTO user = new ResponseDTO();
+        user.setName(userData.getName());
+        user.setPosition(userData.getPosition());
+        user.setAge(userData.getAge());
+        user.setId(userData.getId());
+
+        user.setCar(userData.getCar());
+
+        log("add",user);
+
+        datalist.add(user);
+
+        return user;
+
+    }
 
 }//Cass ends here
 
