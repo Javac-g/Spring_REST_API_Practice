@@ -144,6 +144,25 @@ public class Services {
         return null;
 
     }
+
+    public Integer delete(Integer id){
+        int indexToRem = -1;
+
+        for (int c = 0 ; c < datalist.size(); c++){
+            if (datalist.get(c).getId().equals(id)){
+
+                indexToRem = c;
+
+            }
+        }
+        if (indexToRem != -1){
+            datalist.remove(indexToRem);
+            return indexToRem;
+        }
+
+
+        return null;
+    }
 }//Cass ends here
 
 
