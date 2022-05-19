@@ -2,7 +2,7 @@ package com.MaksDenysov.V6.Services;
 
 import com.MaksDenysov.V6.Controller.Car;
 import com.MaksDenysov.V6.Controller.RequestDTO;
-import com.fasterxml.jackson.core.io.DataOutputAsStream;
+
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -55,11 +55,16 @@ public class Services {
 
     }
     public ResponseDTO create(RequestDTO json){
+
         ResponseDTO user = new ResponseDTO();
 
         user.setName(json.getName());
+
         user.setWork(json.getWork());
+
         user.setTool(json.getTool());
+
+        user.setId(json.getId());
 
         for (Car c: json.getCardata()){
             switch (c.getBrand()){
