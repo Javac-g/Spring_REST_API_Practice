@@ -1,5 +1,7 @@
 package com.MaksDenysov.V7.Service;
 
+import com.MaksDenysov.V7.Controller.Pet;
+import com.MaksDenysov.V7.Controller.RequestDTO;
 import com.MaksDenysov.V7.Controller.ResponseDTO;
 
 import java.io.ByteArrayOutputStream;
@@ -43,16 +45,43 @@ public class Services {
             e.printStackTrace();
         }
 
-        public ResponseDTO ENUM(ResponseDTO user)
+
+    }
 
 
+    public ResponseDTO E(ResponseDTO user,RequestDTO re){
+        for (Pet x : re.getPets()){
+
+            switch (x.getName()){
+
+                case "mur" :
+
+                    user.setPet(Pet_Enum.CAT);
+
+                    break;
+
+                case "bark" :
+
+                    user.setPet(Pet_Enum.DOG);
+
+                    break;
+
+                case "" :
+
+                    user.setPet(Pet_Enum.FISH);
+
+                    break;
+
+            }
+
+        }
 
 
+        return user;
 
+    }
 
-    }//Cass ends here
-
-}
+}//Cass ends here
 
 
 
