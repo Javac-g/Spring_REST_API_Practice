@@ -1,5 +1,7 @@
 package com.MaksDenysov.V7.Controller;
 
+import com.MaksDenysov.V7.Service.Pet_Enum;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +16,7 @@ public class ResponseDTO {
 
     Car car;
 
-    List<Pet> pets = new ArrayList<>();
+    Pet_Enum pet;
 
     public String getName() {
         return name;
@@ -56,11 +58,11 @@ public class ResponseDTO {
         this.car = car;
     }
 
-    public List<Pet> getPets() {
-        return pets;
+    public Pet_Enum getPet() {
+        return pet;
     }
 
-    public void setPets(List<Pet> pets) {
-        this.pets = pets;
+    public void setPet(Pet_Enum pet) {
+        this.pet = pet;
     }
 }
