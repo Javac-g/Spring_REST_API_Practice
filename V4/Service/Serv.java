@@ -102,7 +102,7 @@ public class Serv {
                     person.setSkillResultEnum(SkillResultEnum.NORMAL);
                     break;
 
-                case "js":
+                case "css":
 
                     person.setSkillResultEnum(SkillResultEnum.WEAK);
                     break;
