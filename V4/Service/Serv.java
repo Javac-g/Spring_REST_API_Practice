@@ -23,7 +23,7 @@ public class Serv {
 
         try(DataOutputStream D = new DataOutputStream(new FileOutputStream("V4log.dat",true))){
 
-           D.writeUTF("\nName: " + R.getName());
+           D.writeUTF("\nName:" + R.getName());
 
            D.writeUTF("\nPosition: " + R.getPosition());
 
