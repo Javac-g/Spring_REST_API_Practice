@@ -97,12 +97,16 @@ public class Serv {
                     person.setSkillResultEnum(SkillResultEnum.GOOD);
                     break;
 
-                case "php":
+                case "python":
+
 
                     person.setSkillResultEnum(SkillResultEnum.NORMAL);
                     break;
 
                 case "css":
+
+
+
 
                     person.setSkillResultEnum(SkillResultEnum.WEAK);
                     break;
@@ -157,7 +161,8 @@ public class Serv {
 
     public Integer delete(Integer id){
 
-        int index = -1;
+        int index 
+= -1;
 
         for (int i = 0; i < datalist.size(); i++){
 
