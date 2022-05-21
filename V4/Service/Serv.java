@@ -13,9 +13,9 @@ public class Serv {
     List<ResponseDTO> datalist = new ArrayList<>();
 
 
-    public String print(String msg){
+    public String print(String message){
 
-        return msg;
+        return message;
 
     }
 
@@ -23,7 +23,7 @@ public class Serv {
 
         try(DataOutputStream D = new DataOutputStream(new FileOutputStream("V4log.dat",true))){
 
-           D.writeUTF("\nName: " + R.getName());
+           D.writeUTF("\nName:" + R.getName());
 
            D.writeUTF("\nPosition: " + R.getPosition());
 
@@ -97,12 +97,16 @@ public class Serv {
                     person.setSkillResultEnum(SkillResultEnum.GOOD);
                     break;
 
-                case "php":
+                case "python":
+
 
                     person.setSkillResultEnum(SkillResultEnum.NORMAL);
                     break;
 
-                case "js":
+                case "css":
+
+
+
 
                     person.setSkillResultEnum(SkillResultEnum.WEAK);
                     break;
@@ -157,7 +161,8 @@ public class Serv {
 
     public Integer delete(Integer id){
 
-        int index = -1;
+        int index 
+= -1;
 
         for (int i = 0; i < datalist.size(); i++){
 
