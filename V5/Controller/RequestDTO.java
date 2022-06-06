@@ -8,6 +8,7 @@ public class RequestDTO {
     String position;
     Integer age;
     Integer id;
+    Integer one;
     boolean have_friends;
 
     Tools tools;
