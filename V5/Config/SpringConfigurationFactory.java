@@ -17,6 +17,7 @@ public class SpringConfigurationFactory {
 
 
     @Bean(name = "Controller")
+    @Scoupe(value = "prototype" )
     public Controll controllBean(){
 
         return new Controll(serverBean());
