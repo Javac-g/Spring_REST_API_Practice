@@ -9,7 +9,7 @@ public class ResponseDTO {
     Integer id;
     boolean have_friends;
 
-    Tools tools;
+    Tools Rtools;
 
     Pet_Type type;
 
