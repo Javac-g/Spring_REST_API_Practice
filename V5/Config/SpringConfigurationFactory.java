@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SpringConfigurationFactory {
 
-    @Bean
+    @Bean(name = "Service" )
     public Services serverBean(){
 
         return new Services();
