@@ -178,13 +178,13 @@ public class Services {
 
     public Integer delete(Integer id){
 
-        int removeId = -1;
+        int remove = -1;
 
         for (int i = 0; i < datalist.size(); i++){
 
             if (datalist.get(i).getId().equals(id)){
 
-                removeId = i;
+                remove = i;
                 textLog("Deleted.txt",datalist.get(removeId));
                 dataLog("Deleted.dat",datalist.get(removeId));
 
@@ -194,9 +194,9 @@ public class Services {
         }
         if (removeId != -1){
 
-            datalist.remove(removeId);
+            datalist.remove(remove);
 
-            return removeId;
+            return remove;
 
         }
         return null;
