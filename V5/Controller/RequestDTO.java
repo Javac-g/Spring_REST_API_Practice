@@ -5,7 +5,7 @@ import java.util.List;
 
 public class RequestDTO {
     String name,sname;
-    String position;
+    String position,xyz;
     Integer age;
     Integer id;
     Integer one,two;
