@@ -5,7 +5,7 @@ import com.MaksDenysov.V5.Controller.Tools;
 public class ResponseDTO {
     String name,sname;
     String position;
-    Integer age;
+    Integer age,key;
     Integer id;
     boolean have_friends;
 
