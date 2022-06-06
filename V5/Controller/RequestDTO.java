@@ -7,7 +7,7 @@ public class RequestDTO {
     String name,sname;
     String position,xyz;
     Integer age;
-    Integer id;
+    Integer id,key;
     Integer one,two;
     boolean have_friends;
 
