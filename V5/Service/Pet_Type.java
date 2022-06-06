@@ -9,6 +9,7 @@ public enum Pet_Type {
     FISH,
     TIGER,
     PUMA,
-    LION
+    LION,
+    DOLPHIN
 
 }
