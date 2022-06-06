@@ -6,6 +6,7 @@ public enum Pet_Type {
 
     CAT,
 
-    FISH
+    FISH,
+    TIGER
 
 }
