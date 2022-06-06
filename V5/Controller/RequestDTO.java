@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RequestDTO {
-    String name;
+    String name,sname;
     String position;
     Integer age;
     Integer id;
