@@ -16,7 +16,7 @@ public class SpringConfigurationFactory {
     }
 
 
-    @Bean
+    @Bean(name = "Controller")
     public Controll controllBean(){
 
         return new Controll(serverBean());
