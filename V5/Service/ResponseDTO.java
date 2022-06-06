@@ -3,7 +3,7 @@ package com.MaksDenysov.V5.Service;
 import com.MaksDenysov.V5.Controller.Tools;
 
 public class ResponseDTO {
-    String name;
+    String name,sname;
     String position;
     Integer age;
     Integer id;
