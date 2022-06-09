@@ -15,7 +15,7 @@ public class SpringConfigurationFactory {
 
     }
 
-    @Bean( name="S")
+    @Bean( name="")
     Serv serviceBean(){
 
         return new Serv();
