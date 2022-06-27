@@ -13,9 +13,9 @@ public class Serv {
     List<ResponseDTO> datalist = new ArrayList<>();
 
 
-    public String print(String m){
+    public String print(String msg){
 
-        return m;
+        return msg;
 
     }
 
