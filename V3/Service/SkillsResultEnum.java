@@ -6,6 +6,8 @@ public enum SkillsResultEnum {
     GOOD,
     NORMAL,
     WEAK,
-    BAD
+    BAD,
+    Not bad,
+    
 
 }
