@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Serv {
 
-    List<ResponseDTO> datalist = new ArrayList<>();
+    List<ResponseDTO> database = new ArrayList<>();
 
 
     public String print(String message){
