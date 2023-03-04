@@ -8,6 +8,7 @@ public enum ExpResultEnum {
     NORMAL,
     WEAK,
     BAD,
-    RANGE
+    RANGE,
+Model
 
 }
