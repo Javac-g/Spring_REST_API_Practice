@@ -10,7 +10,8 @@ public enum ExpResultEnum {
     BAD,
     RANGE,
     Model,
-    Cool
+    Cool,
+    DUST
 
 
 }
