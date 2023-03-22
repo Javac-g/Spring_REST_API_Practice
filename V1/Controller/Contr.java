@@ -24,7 +24,7 @@ public class Contr {
        return serv.create(userDTO);
 
     }
-    @GetMapping(value = "/getData" ,produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/getAllData" ,produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseDTO returnData(@RequestParam Integer id){
 
@@ -32,14 +32,14 @@ public class Contr {
 
 
     }
-    @PutMapping(value = "/updateData" , produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/updateAllData" , produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseDTO updateData(@RequestBody RequestDTO update,@RequestParam Integer id){
 
         return serv.update(update,id);
 
     }
-    @DeleteMapping(value = "/deleteData",produces = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(value = "/deleteAllData",produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String deleteData(@RequestParam Integer id){
 
