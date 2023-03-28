@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class Contr {
 
     @Autowired
-    private Serv serv;
+    private Serv sererv;
 
 
     @PostMapping(value = "/addData", produces = MediaType.APPLICATION_JSON_VALUE)
