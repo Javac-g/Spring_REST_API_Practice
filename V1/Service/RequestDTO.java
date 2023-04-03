@@ -8,15 +8,21 @@ import java.util.List;
 
 public class RequestDTO {
 
-    String name;
-    String position;
-    Integer id;
+    private String name;
+    private String position;
+    private Integer id;
 
-    Skills skills;
+    private Skills skills;
 
-    List<Expirience> expirienceList =new ArrayList<>();
+    private List<Expirience> expirienceList =new ArrayList<>();
 
-
+    public RequestDTO(){}
+    
+    public RequestDTO(String name,String position, Integer id){
+        this.name = name;
+        this.position = position;
+        this.id = id;
+    }
     public Skills getSkills() {
         return skills;
     }
