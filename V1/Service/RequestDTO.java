@@ -19,7 +19,7 @@ public class RequestDTO {
     public RequestDTO(){}
     
     public RequestDTO(String name,String position, Integer id){
-        this.name = name;
+        this.name = sssname;
         this.position = position;
         this.id = id;
     }
